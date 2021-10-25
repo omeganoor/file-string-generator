@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-public class FileGenereatorController {
+public class FileGeneratorController {
 
     private FileGeneratorService fileGeneratorService;
 
-    public FileGenereatorController(FileGeneratorService fileGeneratorService) {
+    public FileGeneratorController(FileGeneratorService fileGeneratorService) {
         this.fileGeneratorService = fileGeneratorService;
     }
 
     @PostMapping(path = "/generateFile")
     public ResponseEntity<String> generateFile(@RequestParam(required = true) Integer x) {
 
-        String fileName = fileGeneratorService.fileGenerator(x);
+        String fileName = fileGeneratorService.generateFile(x);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("Your file name is " + fileName);
     }

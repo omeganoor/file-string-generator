@@ -14,7 +14,7 @@ public class FileGeneratorService {
         this.stringUtils = stringUtils;
     }
 
-    public String fileGenerator(int x) {
+    public String generateFile(int x) {
         String file = "test.txt";
         FileWriter writer;
         try {
